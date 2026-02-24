@@ -11,6 +11,8 @@ To design and simulate a Differentiator circuit using μA741 in Proteus Design S
 •	CRO / Oscilloscope
 •	Connecting wires
 ## Circuit Diagram
+<img width="990" height="604" alt="Screenshot 2026-02-24 131539" src="https://github.com/user-attachments/assets/71e51d42-cd14-495e-abe7-15a126bc58b0" />
+
 ## Connection Details:
 •	Input signal → Capacitor (C) → Inverting terminal (Pin 2)
 •	Feedback resistor (Rf) → Between Output (Pin 6) and Pin 2
@@ -32,8 +34,17 @@ A Differentiator circuit produces an output voltage proportional to the rate of 
 6.	Run simulation.
 7.	Observe input and output waveforms on CRO.
 ## Tabulation
-S.No 	         Input Signal	              Frequency	            Expected  Output	            Practical Observation
+| S.No | Input Signal    | Frequency        | Expected Output                                        | Practical Observation (Proteus)                         |
+| ---- | --------------- | ---------------- | ------------------------------------------------------ | ------------------------------------------------------- |
+| 1    | Sine wave       | Low (≈100 Hz)    | Small amplitude cosine wave, output leads input by 90° | Output is small, phase lead clearly observed            |
+| 2    | Sine wave       | Medium (≈500 Hz) | Increased output amplitude, still leading by 90°       | Output amplitude increases, clean waveform              |
+| 3    | Sine wave       | High (≈1 kHz)    | Large output amplitude (∝ frequency)                   | Output amplitude much higher, slight distortion visible |
+| 4    | Square wave     | Medium           | Sharp spikes at rising and falling edges               | Spikes observed at transitions                          |
+| 5    | Triangular wave | Medium           | Square wave output                                     | Nearly square waveform obtained                         |
+
 ## Waveforms
+<img width="689" height="460" alt="Screenshot 2026-02-24 131524" src="https://github.com/user-attachments/assets/bb2bf91d-7761-44a8-90df-c4a5082cb513" />
+
 •	Sine input → Cosine output (90° phase shift)
 •	Square input → Positive & negative spikes
 •	Triangular input → Square wave
@@ -48,8 +59,13 @@ The circuit behaves as a differentiator.
 •	Used in wave shaping and signal processing applications.
 ## Viva Questions
 1.	What is a differentiator?
+    ANS: A differentiator is an op-amp circuit in which the output voltage is proportional to the rate of change of the input voltage.
 2.	Write the output equation of differentiator.
+    ANS: Vout​=−RCdVin/dt​​
 3.	Why is output leading input?
+    ANS: Because the output depends on the rate of change of the input, the output responds faster than the input signal, causing it to lead in phase.
 4.	What happens at very high frequency?
+    ANS: The gain becomes very high, which may cause noise amplification and instability.
 5.	What is practical differentiator?
+    ANS: A practical differentiator is a modified differentiator circuit that includes additional resistor and capacitor to limit high-frequency gain and improve stability.
 
